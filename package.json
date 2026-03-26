@@ -1,0 +1,10 @@
+{
+  "name": "mitchell-landing-pages",
+  "version": "1.0.0",
+  "description": "Mitchell College paid media landing pages",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "preview": "npx serve ."
+  }
+}
