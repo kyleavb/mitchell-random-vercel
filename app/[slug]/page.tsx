@@ -1,11 +1,28 @@
-import { getPageBySlug } from "@/lib/content";
+import { notFound } from "next/navigation";
+import { getPageBySlug, getAllSlugs } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import SectionRenderer from "@/components/SectionRenderer";
 import Footer from "@/components/Footer";
 
-export default function HomePage() {
-  const page = getPageBySlug("business");
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const slugs = getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+export default async function LandingPage({ params }: PageProps) {
+  const { slug } = await params;
+
+  let page;
+  try {
+    page = getPageBySlug(slug);
+  } catch {
+    notFound();
+  }
 
   return (
     <>
