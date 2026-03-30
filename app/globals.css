@@ -29,8 +29,6 @@
   --shadow-ambient: 0 4px 32px rgba(30, 27, 20, 0.04);
   --shadow-elevated: 0 8px 48px rgba(30, 27, 20, 0.06);
 
-  /* Max-width */
-  --container-page: 1440px;
 }
 
 @layer base {

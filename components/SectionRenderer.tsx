@@ -14,19 +14,19 @@ export default function SectionRenderer({ sections }: SectionRendererProps) {
       {sections.map((section, i) => {
         switch (section.type) {
           case "experience": {
-            const { type, ...props } = section;
+            const { type: _type, ...props } = section;
             return <ExperienceSection key={i} {...props} />;
           }
           case "infoCards": {
-            const { type, ...props } = section;
+            const { type: _type, ...props } = section;
             return <InfoCards key={i} {...props} />;
           }
           case "career": {
-            const { type, ...props } = section;
+            const { type: _type, ...props } = section;
             return <CareerSection key={i} {...props} />;
           }
           case "secondaryCta": {
-            const { type, ...props } = section;
+            const { type: _type, ...props } = section;
             return <SecondaryCTA key={i} {...props} />;
           }
           default:

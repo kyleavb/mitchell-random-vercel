@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mitchell College Landing Pages
+
+Next.js landing page system for Mitchell College paid media campaigns. Each landing page is driven by an MDX content file and rendered using reusable React components.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding a New Landing Page
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Duplicate `content/pages/business.mdx`
+2. Change the `slug` and update content (hero, sections, etc.)
+3. Add a hero image to `public/images/` and update `heroImage` path
+4. Adjust `heroFocalPoint: { x, y }` to frame the subject correctly
+5. Deploy — static generation picks it up automatically at `/<slug>`
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/` — Next.js App Router pages and layout
+- `components/` — Reusable section components (Hero, InfoCards, etc.)
+- `components/ui/` — Shared primitives (Button, Kicker, Container)
+- `content/pages/` — MDX content files (one per landing page)
+- `lib/` — TypeScript types and content loader
+- `public/images/` — Static assets (hero photos, logos)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed to Vercel. Push to main to trigger a build.
