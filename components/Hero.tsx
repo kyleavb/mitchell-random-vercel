@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "./ui/Container";
 import Kicker from "./ui/Kicker";
 import FormEmbed from "./FormEmbed";
@@ -19,11 +20,14 @@ export default function Hero({
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-primary py-32 max-md:py-16">
       {/* Background image — full color, focal-point positioned */}
-      <img
+      <Image
         src={heroImage}
-        alt={heroAlt}
+        alt={heroAlt || ""}
         role={heroAlt ? undefined : "presentation"}
-        className="absolute inset-0 z-0 w-full h-full object-cover"
+        fill
+        priority
+        sizes="100vw"
+        className="absolute inset-0 z-0 object-cover"
         style={{
           objectPosition: `${heroFocalPoint.x}% ${heroFocalPoint.y}%`,
         }}

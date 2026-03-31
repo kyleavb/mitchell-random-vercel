@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Container from "./ui/Container";
 import Button from "./ui/Button";
 
@@ -24,7 +25,7 @@ export default function Nav({ logoText, logoSrc, ctaText, ctaHref }: NavProps) {
               className="shrink-0 font-headline text-[1.75rem] font-bold text-on-primary no-underline tracking-tight"
             >
               {logoSrc ? (
-                <img src={logoSrc} alt={logoText} className="max-h-14 w-auto" />
+                <Image src={logoSrc} alt={logoText} width={200} height={56} className="max-h-14 w-auto" />
               ) : (
                 logoText
               )}
