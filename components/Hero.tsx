@@ -29,20 +29,20 @@ export default function Hero({
         }}
       />
 
-      {/* Subtle gradient overlay — lets photo color through */}
+      {/* Violet gradient overlay — brand primary base per §4.2 */}
       <div
         className="absolute inset-0 z-[1]"
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(to right, rgba(56, 22, 75, 0.55), rgba(56, 22, 75, 0.25), transparent)",
+            "linear-gradient(to right, rgba(56, 22, 75, 0.85), rgba(56, 22, 75, 0.6), rgba(56, 22, 75, 0.35))",
         }}
       />
 
       <Container className="relative z-[2] w-full">
         <div className="grid grid-cols-[1.2fr_0.8fr] gap-16 items-center max-lg:grid-cols-1 max-lg:gap-12">
           <div className="flex flex-col gap-6">
-            <Kicker>{program}</Kicker>
+            <Kicker className="text-white">{program}</Kicker>
 
             <h1 className="text-on-primary">
               {title}

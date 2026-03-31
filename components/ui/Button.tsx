@@ -32,6 +32,13 @@ export default function Button({
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
 
   if (href) {
+    if (href.startsWith("#")) {
+      return (
+        <a href={href} className={classes} onClick={onClick}>
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={classes}>
         {children}

@@ -9,7 +9,7 @@ export default function ExperienceSection({
   courses,
 }: Omit<ExperienceSectionData, "type">) {
   return (
-    <section className="bg-surface py-32 max-md:py-16">
+    <section className="bg-white py-32 max-md:py-16">
       <Container>
         <div className="grid grid-cols-[1.2fr_0.8fr] gap-16 items-start max-lg:grid-cols-1 max-lg:gap-12">
           <div className="flex flex-col gap-6">
@@ -32,7 +32,7 @@ export default function ExperienceSection({
                     className="flex items-center gap-3 text-on-surface-variant text-[0.9375rem] leading-relaxed"
                   >
                     <span
-                      className="material-symbols-outlined text-accent shrink-0 text-xl"
+                      className="material-symbols-outlined text-primary shrink-0 text-xl"
                       aria-hidden="true"
                     >
                       check_circle

@@ -5,7 +5,7 @@ export default function InfoCards({
   cards,
 }: Omit<InfoCardsSectionData, "type">) {
   return (
-    <section className="bg-surface-container-low py-32 max-md:py-16">
+    <section className="bg-secondary py-32 max-md:py-16">
       <Container>
         <div className="grid grid-cols-3 gap-12 max-lg:grid-cols-2 max-lg:gap-8 max-md:grid-cols-1 max-md:gap-6">
           {cards.map((card, i) => (
@@ -13,7 +13,7 @@ export default function InfoCards({
               key={i}
               className="bg-surface-container-lowest p-8 rounded-xl shadow-ambient flex flex-col gap-4"
             >
-              <div className="text-accent leading-none mb-2">
+              <div className="text-primary leading-none mb-2">
                 <span
                   className="material-symbols-outlined text-[2.5rem]"
                   aria-hidden="true"

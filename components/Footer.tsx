@@ -1,32 +1,32 @@
 import Container from "./ui/Container";
 
 const NAV_COLUMNS = [
-  {
-    title: "Navigate",
-    links: [
-      { label: "Academics", href: "#" },
-      { label: "Admissions", href: "#" },
-      { label: "Campus Life", href: "#" },
-      { label: "Alumni", href: "#" },
-    ],
-  },
-  {
-    title: "Connect",
-    links: [
-      { label: "Contact Us", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Give", href: "#" },
-      { label: "Press Room", href: "#" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Accessibility", href: "#" },
-    ],
-  },
+  // {
+  //   title: "Navigate",
+  //   links: [
+  //     { label: "Academics", href: "#" },
+  //     { label: "Admissions", href: "#" },
+  //     { label: "Campus Life", href: "#" },
+  //     { label: "Alumni", href: "#" },
+  //   ],
+  // },
+  // {
+  //   title: "Connect",
+  //   links: [
+  //     { label: "Contact Us", href: "#" },
+  //     { label: "Careers", href: "#" },
+  //     { label: "Give", href: "#" },
+  //     { label: "Press Room", href: "#" },
+  //   ],
+  // },
+  // {
+  //   title: "Legal",
+  //   links: [
+  //     { label: "Privacy Policy", href: "#" },
+  //     { label: "Terms of Service", href: "#" },
+  //     { label: "Accessibility", href: "#" },
+  //   ],
+  // },
 ];
 
 function FacebookIcon() {
@@ -81,9 +81,9 @@ export default function Footer() {
     <footer className="bg-primary-light">
       <Container>
         {/* Main grid */}
-        <div className="grid grid-cols-4 max-md:grid-cols-2 max-sm:grid-cols-1 gap-12 py-16">
+        <div className="flex flex-col items-center text-center gap-12 py-16">
           {/* Brand column */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center gap-4 max-w-lg">
             <p className="font-headline text-xl font-bold text-on-primary">
               Mitchell College
             </p>
@@ -117,12 +117,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 py-6 flex flex-row max-sm:flex-col items-center max-sm:items-start justify-between gap-4">
+        <div className="border-t border-white/10 py-6 flex flex-col items-center justify-center gap-4">
           <p className="text-white/50 text-sm">
             &copy; {year} Mitchell College. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a
+            {/* <a
               href="#"
               aria-label="Facebook"
               className="text-white/50 transition-colors duration-150 hover:text-accent focus-visible:text-accent"
@@ -142,7 +142,7 @@ export default function Footer() {
               className="text-white/50 transition-colors duration-150 hover:text-accent focus-visible:text-accent"
             >
               <YouTubeIcon />
-            </a>
+            </a> */}
           </div>
         </div>
       </Container>

@@ -15,6 +15,7 @@ export default function HomePage() {
 
       <Nav
         logoText="Mitchell College"
+        logoSrc="/images/Mitchell_Logo_Horizontal_White.png"
         ctaText="Request Info"
         ctaHref="#inquiry-form"
       />

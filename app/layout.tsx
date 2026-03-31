@@ -4,7 +4,7 @@ import "./globals.css";
 
 const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-nunito",
   display: "swap",
 });
@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Mitchell College — Honor the Promise to Yourself",
   description:
     "Mitchell College accepts 60+ transfer credits and offers flexible pathways to help you finish your degree. Honor the promise you made to yourself.",
+  icons: {
+    icon: "/images/Mitchell_Logo_Vertical_Color.png",
+  },
 };
 
 export default function RootLayout({
