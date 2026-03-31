@@ -7,7 +7,7 @@ interface FormEmbedProps {
 export default function FormEmbed({ src, title, subheading }: FormEmbedProps) {
   return (
     <div
-      className="bg-white rounded-xl shadow-elevated overflow-hidden"
+      className="bg-silvergrass rounded-xl shadow-elevated overflow-hidden"
       id="inquiry-form"
     >
       {/* Mitchell Red top accent — brand §4.4 line work */}
@@ -23,12 +23,12 @@ export default function FormEmbed({ src, title, subheading }: FormEmbedProps) {
           </p>
         )}
 
-        <div className="pardot-form min-h-[600px] flex items-stretch justify-center">
+        <div className="pardot-form min-h-[900px] flex items-stretch justify-center">
           {src ? (
             <iframe
               src={src}
               title="Request Information Form"
-              className="w-full min-h-[600px] border-none"
+              className="w-full min-h-[900px] border-none"
               style={{ colorScheme: "light" }}
             />
           ) : (
