@@ -1,6 +1,6 @@
 import Container from "./ui/Container";
 
-const NAV_COLUMNS = [
+const NAV_COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
   // {
   //   title: "Navigate",
   //   links: [
