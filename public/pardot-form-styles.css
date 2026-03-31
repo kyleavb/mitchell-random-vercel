@@ -32,7 +32,7 @@
 /* ── Base reset ──────────────────────────────────────── */
 body {
   margin: 0;
-  padding: 16px;
+  padding: 8px 0;
   font-family: var(--mc-font-body);
   color: var(--mc-text);
   background: transparent;
@@ -53,8 +53,43 @@ form {
 
 /* ── Field layout ────────────────────────────────────── */
 .form-field,
-p.form-field {
-  margin-bottom: 1.25rem;
+p.form-field,
+p {
+  margin-bottom: 0.875rem;
+}
+
+/* ── Override Pardot table layout for full-width fields ─ */
+form,
+form > *,
+.form {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+table {
+  width: 100% !important;
+  table-layout: fixed;
+}
+
+td {
+  display: block;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+tr {
+  display: block;
+  width: 100%;
+}
+
+/* ── Force full-width on any input/select/textarea after a label ── */
+label ~ input,
+label ~ select,
+label ~ textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 /* ── Labels ──────────────────────────────────────────── */
@@ -65,7 +100,7 @@ label,
   font-weight: 700;
   color: var(--mc-text);
   letter-spacing: 0.02em;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.25rem;
   display: block;
 }
 
@@ -84,11 +119,13 @@ input[type="url"],
 input[type="password"],
 select,
 textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0.625rem 0.875rem;
   font-family: var(--mc-font-body);
   font-size: 0.9375rem;
-  line-height: 1.5;
+  line-height: 1.4;
   color: var(--mc-text);
   background-color: var(--mc-surface-low);
   border: 1.5px solid var(--mc-outline-variant);
@@ -97,6 +134,7 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  box-sizing: border-box;
 }
 
 input[type="text"]:hover,
@@ -139,7 +177,7 @@ select {
 
 /* ── Textarea ────────────────────────────────────────── */
 textarea {
-  min-height: 5.5rem;
+  min-height: 4.5rem;
   resize: vertical;
 }
 
@@ -189,8 +227,10 @@ textarea.error:focus {
 button[type="submit"],
 input[type="submit"],
 .form-submit {
-  width: 100%;
-  padding: 1rem 1.75rem;
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 1.125rem 1.75rem;
   font-family: var(--mc-font-headline);
   font-size: 0.875rem;
   font-weight: 700;
@@ -202,8 +242,9 @@ input[type="submit"],
   border-radius: 0.5rem;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.2s ease;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   box-shadow: 0 2px 8px rgba(255, 0, 51, 0.25);
+  box-sizing: border-box;
 }
 
 button[type="submit"]:hover,
@@ -247,21 +288,36 @@ input[type="submit"]:focus-visible,
 p.submit input,
 p input[type="submit"] {
   margin: 0;
+  width: 100% !important;
+}
+
+p.submit,
+p.form-field {
+  width: 100% !important;
 }
 
 p {
   max-width: none;
+  margin-top: 0;
 }
 
 table,
 tr,
 td {
-  border: none;
-  padding: 0;
+  border: none !important;
+  padding: 0 !important;
   border-collapse: collapse;
 }
 
 img[src*="spacer"],
 img[src*="pixel"] {
   display: none;
+}
+
+/* ── Hide Pardot field descriptions to save space ────── */
+.description {
+  font-size: 0.6875rem;
+  color: var(--mc-text-secondary);
+  margin-top: 0.125rem;
+  line-height: 1.3;
 }

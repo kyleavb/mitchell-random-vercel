@@ -17,16 +17,18 @@ export default function FormEmbed({ src, title, subheading }: FormEmbedProps) {
         <h2 className="font-headline text-2xl font-bold text-primary mb-3">
           {title}
         </h2>
-        <p className="text-on-surface-variant text-[0.9375rem] mb-8 max-w-none leading-relaxed">
-          {subheading}
-        </p>
+        {subheading && (
+          <p className="text-on-surface-variant text-[0.9375rem] mb-8 max-w-none leading-relaxed">
+            {subheading}
+          </p>
+        )}
 
-        <div className="pardot-form min-h-[420px] flex items-stretch justify-center">
+        <div className="pardot-form min-h-[600px] flex items-stretch justify-center">
           {src ? (
             <iframe
               src={src}
               title="Request Information Form"
-              className="w-full min-h-[420px] border-none"
+              className="w-full min-h-[600px] border-none"
               style={{ colorScheme: "light" }}
             />
           ) : (
