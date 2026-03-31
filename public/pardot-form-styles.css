@@ -236,7 +236,7 @@ body form .form-submit {
   max-width: none !important;
   min-height: 4.5rem !important;
   padding: 1.25rem 1.5rem !important;
-  font-family: var(--mc-font-body) !important;
+  font-family: var(--mc-font-headline) !important;
   font-size: 0.875rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.15em !important;
