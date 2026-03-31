@@ -230,7 +230,9 @@ body form textarea.error:focus {
 body form button[type="submit"],
 body form input[type="submit"],
 body form .form-submit {
-  display: inline-block !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   width: 33.333% !important;
   min-width: 160px !important;
   max-width: none !important;

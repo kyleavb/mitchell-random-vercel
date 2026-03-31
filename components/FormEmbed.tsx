@@ -23,13 +23,13 @@ export default function FormEmbed({ src, title, subheading }: FormEmbedProps) {
           </p>
         )}
 
-        <div className="pardot-form flex flex-col items-stretch">
+        <div className="pardot-form">
           {src ? (
             <iframe
               src={src}
               title="Request Information Form"
-              className="w-full flex-1 border-none"
-              style={{ colorScheme: "light", minHeight: "100%" }}
+              className="w-full border-none"
+              style={{ colorScheme: "light", height: "820px" }}
             />
           ) : (
             <div className="w-full min-h-[320px] border-2 border-dashed border-outline-variant rounded-md flex items-center justify-center text-on-surface-variant text-sm text-center p-8">
