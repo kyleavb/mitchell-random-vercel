@@ -7,7 +7,7 @@ interface FormEmbedProps {
 export default function FormEmbed({ src, title, subheading }: FormEmbedProps) {
   return (
     <div
-      className="bg-silvergrass rounded-xl shadow-elevated overflow-hidden"
+      className="bg-silvergrass/70 backdrop-blur-xl rounded-xl shadow-elevated overflow-hidden border border-white/20"
       id="inquiry-form"
     >
       {/* Mitchell Red top accent — brand §4.4 line work */}
