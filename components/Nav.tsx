@@ -24,7 +24,7 @@ export default function Nav({ logoText, logoSrc, ctaText, ctaHref }: NavProps) {
               className="shrink-0 font-headline text-[1.75rem] font-bold text-on-primary no-underline tracking-tight"
             >
               {logoSrc ? (
-                <img src={logoSrc} alt={logoText} className="max-h-10 w-auto" />
+                <img src={logoSrc} alt={logoText} className="max-h-14 w-auto" />
               ) : (
                 logoText
               )}
