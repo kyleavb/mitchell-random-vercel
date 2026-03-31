@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary";
 
 interface ButtonProps {
   variant?: ButtonVariant;
@@ -15,8 +15,6 @@ const variantClasses: Record<ButtonVariant, string> = {
     "bg-gradient-to-br from-secondary to-secondary-dark text-white border-none hover:brightness-110 active:scale-[0.97]",
   secondary:
     "bg-primary-light text-on-primary border-none hover:brightness-110 active:scale-[0.97]",
-  ghost:
-    "bg-transparent border border-white/15 text-on-primary backdrop-blur-sm hover:bg-white/5 active:scale-[0.97]",
 };
 
 const baseClasses =
