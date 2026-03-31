@@ -21,6 +21,14 @@ export const metadata: Metadata = {
   title: "Mitchell College — Honor the Promise to Yourself",
   description:
     "Mitchell College accepts 60+ transfer credits and offers flexible pathways to help you finish your degree. Honor the promise you made to yourself.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   icons: {
     icon: "/images/Mitchell_Logo_Vertical_Color.png",
   },
