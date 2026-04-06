@@ -6,6 +6,7 @@ export default function ExperienceSection({
   kicker,
   heading,
   body,
+  sidebarTitle,
   courses,
 }: Omit<ExperienceSectionData, "type">) {
   return (
@@ -24,7 +25,7 @@ export default function ExperienceSection({
 
           <div className="flex flex-col gap-6">
             <div className="bg-surface-container-lowest p-8 rounded-xl shadow-ambient flex flex-col gap-4">
-              <h3 className="text-on-surface">Sample Coursework</h3>
+              <h3 className="text-on-surface">{sidebarTitle || "Sample Coursework"}</h3>
               <ul className="flex flex-col gap-3 list-none m-0 p-0">
                 {courses.map((course, i) => (
                   <li

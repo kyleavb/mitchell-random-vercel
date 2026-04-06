@@ -3,11 +3,33 @@ import Kicker from "./ui/Kicker";
 import Button from "./ui/Button";
 import { CareerSectionData } from "@/lib/types";
 
+function RoleList({ roles }: { roles: string[] }) {
+  return (
+    <ul className="grid grid-cols-2 gap-3 list-none m-0 p-0 max-md:grid-cols-1">
+      {roles.map((role, i) => (
+        <li
+          key={i}
+          className="flex items-center gap-3 py-3 px-4 bg-white/5 rounded-md text-on-primary text-[0.9375rem] font-medium transition-colors hover:bg-white/[0.08]"
+        >
+          <span
+            className="material-symbols-outlined text-accent shrink-0 text-lg"
+            aria-hidden="true"
+          >
+            arrow_forward
+          </span>
+          {role}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function CareerSection({
   kicker,
   heading,
   body,
   roles,
+  roleGroups,
   aside,
   closingBody,
   ctaText,
@@ -24,22 +46,18 @@ export default function CareerSection({
               {body}
             </p>
 
-            <ul className="grid grid-cols-2 gap-3 list-none m-0 p-0 max-md:grid-cols-1">
-              {roles.map((role, i) => (
-                <li
-                  key={i}
-                  className="flex items-center gap-3 py-3 px-4 bg-white/5 rounded-md text-on-primary text-[0.9375rem] font-medium transition-colors hover:bg-white/[0.08]"
-                >
-                  <span
-                    className="material-symbols-outlined text-accent shrink-0 text-lg"
-                    aria-hidden="true"
-                  >
-                    arrow_forward
-                  </span>
-                  {role}
-                </li>
-              ))}
-            </ul>
+            {roleGroups ? (
+              roleGroups.map((group, i) => (
+                <div key={i} className="flex flex-col gap-3">
+                  <p className="text-on-primary-container leading-[1.7] max-w-none font-medium">
+                    {group.label}
+                  </p>
+                  <RoleList roles={group.roles} />
+                </div>
+              ))
+            ) : roles ? (
+              <RoleList roles={roles} />
+            ) : null}
 
             {closingBody && (
               <p className="text-on-primary-container leading-[1.7] max-w-none">

@@ -22,6 +22,7 @@ export interface ExperienceSectionData {
   kicker: string;
   heading: string;
   body: string[];
+  sidebarTitle?: string;
   courses: string[];
 }
 
@@ -29,6 +30,8 @@ export interface InfoCardData {
   icon: string;
   title: string;
   body: string;
+  items?: string[];
+  footnote?: string;
 }
 
 export interface InfoCardsSectionData {
@@ -41,12 +44,18 @@ export interface CareerAsideData {
   body: string;
 }
 
+export interface RoleGroup {
+  label: string;
+  roles: string[];
+}
+
 export interface CareerSectionData {
   type: "career";
   kicker: string;
   heading: string;
   body: string;
-  roles: string[];
+  roles?: string[];
+  roleGroups?: RoleGroup[];
   aside: CareerAsideData;
   closingBody?: string;
   ctaText?: string;
