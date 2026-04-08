@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       "Mitchell College accepts 60+ transfer credits and offers flexible pathways to help you finish your degree. Honor the promise you made to yourself.",
     images: [
       {
-        url: "https://mitchell-vercel.vercel.app/images/og-hero.jpg",
+        url: "https://online.mitchell.edu/images/og-hero.jpg",
         width: 1200,
         height: 630,
         alt: "Students around a table, laughing and studying",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     description:
       "Mitchell College accepts 60+ transfer credits and offers flexible pathways to help you finish your degree. Honor the promise you made to yourself.",
     images: [
-      "https://mitchell-vercel.vercel.app/images/og-hero.jpg",
+      "https://online.mitchell.edu/images/og-hero.jpg",
     ],
   },
 };
