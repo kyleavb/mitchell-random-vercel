@@ -18,7 +18,7 @@ export default function ExperienceSection({
   return (
     <section className="bg-white py-32 max-md:py-16">
       <Container>
-        <div className="flex flex-col gap-6">
+        <div className="max-w-[100ch] flex flex-col gap-6">
           <Kicker>{kicker}</Kicker>
           <h2 className="text-on-surface">{heading}</h2>
           {bodyBefore.map((paragraph, i) => (
