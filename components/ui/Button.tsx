@@ -18,7 +18,7 @@ const variantClasses: Record<ButtonVariant, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 px-10 py-4 rounded-md font-body font-bold text-sm tracking-widest no-underline cursor-pointer transition-all whitespace-nowrap";
+  "inline-flex items-center justify-center gap-2 px-10 py-4 rounded-md font-headline font-bold text-sm tracking-widest no-underline cursor-pointer transition-all whitespace-nowrap";
 
 export default function Button({
   variant = "primary",
