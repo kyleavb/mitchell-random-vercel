@@ -120,6 +120,6 @@
 
 @media (max-width: 768px) {
   .hero-bg {
-    object-position: 30% 0%;
+    object-position: center 0%;
   }
 }
