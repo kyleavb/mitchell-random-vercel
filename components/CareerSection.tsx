@@ -2,6 +2,7 @@ import Container from "./ui/Container";
 import Kicker from "./ui/Kicker";
 import Button from "./ui/Button";
 import { CareerSectionData } from "@/lib/types";
+import { ArrowForwardIcon } from "./icons";
 
 function RoleList({ roles }: { roles: string[] }) {
   return (
@@ -11,12 +12,7 @@ function RoleList({ roles }: { roles: string[] }) {
           key={i}
           className="flex items-center gap-3 py-3 px-4 bg-white/5 rounded-md text-on-primary text-[0.9375rem] font-medium transition-colors hover:bg-white/[0.08]"
         >
-          <span
-            className="material-symbols-outlined text-accent shrink-0 text-lg"
-            aria-hidden="true"
-          >
-            arrow_forward
-          </span>
+          <ArrowForwardIcon className="w-[1.125rem] h-[1.125rem] text-accent shrink-0" />
           {role}
         </li>
       ))}
