@@ -1,18 +1,37 @@
 import type { Metadata } from "next";
-import { Nunito, Gentium_Book_Plus } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-nunito",
+const decalotype = localFont({
+  src: [
+    { path: "../public/fonts/decalotype/decalotype.regular.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/decalotype/decalotype.bold.otf", weight: "700", style: "normal" },
+    { path: "../public/fonts/decalotype/decalotype.bold-italic.otf", weight: "700", style: "italic" },
+    { path: "../public/fonts/decalotype/decalotype.extrabold.otf", weight: "800", style: "normal" },
+    { path: "../public/fonts/decalotype/decalotype.extrabold-italic.otf", weight: "800", style: "italic" },
+  ],
+  variable: "--font-decalotype",
   display: "swap",
 });
 
-const gentiumBookPlus = Gentium_Book_Plus({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+const roundo = localFont({
+  src: [
+    { path: "../public/fonts/roundo/roundo.regular.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/roundo/roundo.medium.otf", weight: "500", style: "normal" },
+    { path: "../public/fonts/roundo/roundo.semibold.otf", weight: "600", style: "normal" },
+    { path: "../public/fonts/roundo/roundo.bold.otf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-roundo",
+  display: "swap",
+});
+
+const gentiumPlus = localFont({
+  src: [
+    { path: "../public/fonts/gentium-plus/GentiumPlus-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../public/fonts/gentium-plus/GentiumPlus-Italic.ttf", weight: "400", style: "italic" },
+    { path: "../public/fonts/gentium-plus/GentiumPlus-Bold.ttf", weight: "700", style: "normal" },
+    { path: "../public/fonts/gentium-plus/GentiumPlus-BoldItalic.ttf", weight: "700", style: "italic" },
+  ],
   variable: "--font-gentium",
   display: "swap",
 });
@@ -64,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${nunito.variable} ${gentiumBookPlus.variable}`}
+      className={`${decalotype.variable} ${roundo.variable} ${gentiumPlus.variable}`}
     >
       <head>
         <link

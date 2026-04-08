@@ -30,8 +30,9 @@
   --color-outline: #79767D;
   --color-outline-variant: #CAC5CD;
 
-  /* Typography — Nunito ≈ Roundo (primary), Gentium Book Plus ≈ Gentium Plus (secondary) */
-  --font-headline: var(--font-nunito);
+  /* Typography — Decalotype (display), Roundo (primary), Gentium Plus (secondary/body) */
+  --font-display: var(--font-decalotype);
+  --font-headline: var(--font-roundo);
   --font-body: var(--font-gentium);
 
   /* Shadows */
@@ -82,6 +83,7 @@
   }
 
   h1 {
+    font-family: var(--font-display), sans-serif;
     font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 800;
     letter-spacing: -0.025em;

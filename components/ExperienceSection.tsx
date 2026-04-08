@@ -17,9 +17,11 @@ export default function ExperienceSection({
             <Kicker>{kicker}</Kicker>
             <h2 className="text-on-surface">{heading}</h2>
             {body.map((paragraph, i) => (
-              <p key={i} className="text-on-surface-variant leading-[1.7]">
-                {paragraph}
-              </p>
+              <p
+                key={i}
+                className="text-on-surface-variant leading-[1.7]"
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
             ))}
           </div>
 
