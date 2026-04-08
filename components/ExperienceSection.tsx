@@ -24,7 +24,7 @@ export default function ExperienceSection({
           {bodyBefore.map((paragraph, i) => (
             <p
               key={i}
-              className="text-on-surface-variant leading-[1.7]"
+              className="text-on-surface-variant leading-[1.7] max-w-[100ch]"
               dangerouslySetInnerHTML={{ __html: paragraph }}
             />
           ))}
@@ -44,7 +44,7 @@ export default function ExperienceSection({
           {bodyAfter.map((paragraph, i) => (
             <p
               key={`after-${i}`}
-              className="text-on-surface-variant leading-[1.7]"
+              className="text-on-surface-variant leading-[1.7] max-w-[100ch]"
               dangerouslySetInnerHTML={{ __html: paragraph }}
             />
           ))}
