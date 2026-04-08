@@ -1,6 +1,7 @@
 import Container from "./ui/Container";
 import Kicker from "./ui/Kicker";
 import { ExperienceSectionData } from "@/lib/types";
+import { CheckCircleIcon } from "./icons";
 
 export default function ExperienceSection({
   kicker,
@@ -34,12 +35,7 @@ export default function ExperienceSection({
                     key={i}
                     className="flex items-center gap-3 text-on-surface-variant text-[0.9375rem] leading-relaxed"
                   >
-                    <span
-                      className="material-symbols-outlined text-primary shrink-0 text-xl"
-                      aria-hidden="true"
-                    >
-                      check_circle
-                    </span>
+                    <CheckCircleIcon className="w-5 h-5 text-primary shrink-0" />
                     {course}
                   </li>
                 ))}

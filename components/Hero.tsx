@@ -26,7 +26,7 @@ export default function Hero({
         role={heroAlt ? undefined : "presentation"}
         fill
         priority
-        sizes="100vw"
+        sizes="(max-width: 1440px) 100vw, 1440px"
         className="absolute inset-0 z-0 object-cover"
         style={{
           objectPosition: `${heroFocalPoint.x}% ${heroFocalPoint.y}%`,

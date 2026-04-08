@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Container from "./ui/Container";
 import Button from "./ui/Button";
+import { MenuIcon, CloseIcon } from "./icons";
 
 interface NavProps {
   logoText: string;
@@ -40,7 +41,7 @@ export default function Nav({ logoText, logoSrc, ctaText, ctaHref }: NavProps) {
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
-              <span className="material-symbols-outlined text-2xl">menu</span>
+              <MenuIcon className="w-6 h-6" />
             </button>
           </div>
         </Container>
@@ -57,7 +58,7 @@ export default function Nav({ logoText, logoSrc, ctaText, ctaHref }: NavProps) {
           onClick={() => setMobileOpen(false)}
           aria-label="Close menu"
         >
-          <span className="material-symbols-outlined text-2xl">close</span>
+          <CloseIcon className="w-6 h-6" />
         </button>
 
         <nav className="flex flex-col items-center gap-6">

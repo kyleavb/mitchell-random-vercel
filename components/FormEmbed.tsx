@@ -23,13 +23,15 @@ export default function FormEmbed({ src, title, subheading }: FormEmbedProps) {
           </p>
         )}
 
-        <div className="pardot-form">
+        <div className="pardot-form" style={{ minHeight: "820px" }}>
           {src ? (
             <iframe
               src={src}
               title="Request Information Form"
               className="w-full border-none"
               style={{ colorScheme: "light", height: "820px" }}
+              loading="lazy"
+              sandbox="allow-same-origin allow-forms allow-popups allow-scripts"
             />
           ) : (
             <div className="w-full min-h-[320px] border-2 border-dashed border-outline-variant rounded-md flex items-center justify-center text-on-surface-variant text-sm text-center p-8">
