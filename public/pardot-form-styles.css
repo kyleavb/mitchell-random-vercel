@@ -278,6 +278,14 @@ body form .form-submit:focus-visible {
   outline-offset: 2px !important;
 }
 
+@media (max-width: 768px) {
+  body form button[type="submit"],
+  body form input[type="submit"],
+  body form .form-submit {
+    width: 100% !important;
+  }
+}
+
 /* ── Consent / legal text ────────────────────────────── */
 .consent-notice,
 .legal-notice {
