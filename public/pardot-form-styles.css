@@ -12,6 +12,12 @@
 /* ── Fonts ───────────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+/* Self-hosted Roundo (served from same domain as this CSS) */
+@font-face { font-family: 'Roundo'; src: url('/fonts/roundo/roundo.regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Roundo'; src: url('/fonts/roundo/roundo.medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Roundo'; src: url('/fonts/roundo/roundo.semibold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Roundo'; src: url('/fonts/roundo/roundo.bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+
 /* ── Brand tokens ────────────────────────────────────── */
 :root {
   --mc-primary: #38164B;
@@ -25,7 +31,7 @@
   --mc-text-secondary: #48464C;
   --mc-outline: #79767D;
   --mc-outline-variant: #CAC5CD;
-  --mc-font-headline: 'Nunito', sans-serif;
+  --mc-font-headline: 'Roundo', 'Nunito', sans-serif;
   --mc-font-body: 'Gentium Book Plus', Georgia, serif;
 }
 
@@ -236,36 +242,33 @@ body form .form-submit {
   width: 50% !important;
   min-width: 160px !important;
   max-width: none !important;
-  min-height: 4.5rem !important;
-  padding: 1.25rem 1.5rem !important;
+  padding: 1rem 2.5rem !important;
   font-family: var(--mc-font-headline) !important;
   font-size: 0.875rem !important;
   font-weight: 700 !important;
-  letter-spacing: 0.15em !important;
+  letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
   color: white !important;
   background: linear-gradient(135deg, var(--mc-red), var(--mc-red-dark)) !important;
   border: none !important;
-  border-radius: 0.5rem !important;
+  border-radius: 0.375rem !important;
   cursor: pointer !important;
-  transition: transform 0.15s ease, box-shadow 0.2s ease !important;
+  transition: filter 0.15s ease, transform 0.15s ease !important;
   margin-top: 0.75rem !important;
-  box-shadow: 0 2px 8px rgba(255, 0, 51, 0.25) !important;
+  white-space: nowrap !important;
   box-sizing: border-box !important;
 }
 
 body form button[type="submit"]:hover,
 body form input[type="submit"]:hover,
 body form .form-submit:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 16px rgba(255, 0, 51, 0.3) !important;
+  filter: brightness(1.1) !important;
 }
 
 body form button[type="submit"]:active,
 body form input[type="submit"]:active,
 body form .form-submit:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 1px 4px rgba(255, 0, 51, 0.2) !important;
+  transform: scale(0.97) !important;
 }
 
 body form button[type="submit"]:focus-visible,
