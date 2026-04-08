@@ -4,11 +4,11 @@ import "./globals.css";
 
 const decalotype = localFont({
   src: [
-    { path: "../public/fonts/decalotype/decalotype.regular.otf", weight: "400", style: "normal" },
-    { path: "../public/fonts/decalotype/decalotype.bold.otf", weight: "700", style: "normal" },
-    { path: "../public/fonts/decalotype/decalotype.bold-italic.otf", weight: "700", style: "italic" },
-    { path: "../public/fonts/decalotype/decalotype.extrabold.otf", weight: "800", style: "normal" },
-    { path: "../public/fonts/decalotype/decalotype.extrabold-italic.otf", weight: "800", style: "italic" },
+    { path: "../public/fonts/decalotype/decalotype.regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/decalotype/decalotype.bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/decalotype/decalotype.bold-italic.woff2", weight: "700", style: "italic" },
+    { path: "../public/fonts/decalotype/decalotype.extrabold.woff2", weight: "800", style: "normal" },
+    { path: "../public/fonts/decalotype/decalotype.extrabold-italic.woff2", weight: "800", style: "italic" },
   ],
   variable: "--font-decalotype",
   display: "swap",
@@ -16,10 +16,10 @@ const decalotype = localFont({
 
 const roundo = localFont({
   src: [
-    { path: "../public/fonts/roundo/roundo.regular.otf", weight: "400", style: "normal" },
-    { path: "../public/fonts/roundo/roundo.medium.otf", weight: "500", style: "normal" },
-    { path: "../public/fonts/roundo/roundo.semibold.otf", weight: "600", style: "normal" },
-    { path: "../public/fonts/roundo/roundo.bold.otf", weight: "700", style: "normal" },
+    { path: "../public/fonts/roundo/roundo.regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/roundo/roundo.medium.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/roundo/roundo.semibold.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/roundo/roundo.bold.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-roundo",
   display: "swap",
@@ -27,10 +27,10 @@ const roundo = localFont({
 
 const gentiumPlus = localFont({
   src: [
-    { path: "../public/fonts/gentium-plus/GentiumPlus-Regular.ttf", weight: "400", style: "normal" },
-    { path: "../public/fonts/gentium-plus/GentiumPlus-Italic.ttf", weight: "400", style: "italic" },
-    { path: "../public/fonts/gentium-plus/GentiumPlus-Bold.ttf", weight: "700", style: "normal" },
-    { path: "../public/fonts/gentium-plus/GentiumPlus-BoldItalic.ttf", weight: "700", style: "italic" },
+    { path: "../public/fonts/gentium-plus/GentiumPlus-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/gentium-plus/GentiumPlus-Italic.woff2", weight: "400", style: "italic" },
+    { path: "../public/fonts/gentium-plus/GentiumPlus-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/gentium-plus/GentiumPlus-BoldItalic.woff2", weight: "700", style: "italic" },
   ],
   variable: "--font-gentium",
   display: "swap",
