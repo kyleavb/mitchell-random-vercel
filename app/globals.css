@@ -113,3 +113,13 @@
     outline-offset: 2px;
   }
 }
+
+.hero-bg {
+  object-position: var(--hero-fp);
+}
+
+@media (max-width: 768px) {
+  .hero-bg {
+    object-position: center 30%;
+  }
+}

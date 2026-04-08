@@ -27,10 +27,10 @@ export default function Hero({
         fill
         priority
         sizes="(max-width: 1440px) 100vw, 1440px"
-        className="absolute inset-0 z-0 object-cover"
+        className="absolute inset-0 z-0 object-cover hero-bg"
         style={{
-          objectPosition: `${heroFocalPoint.x}% ${heroFocalPoint.y}%`,
-        }}
+          "--hero-fp": `${heroFocalPoint.x}% ${heroFocalPoint.y}%`,
+        } as React.CSSProperties}
       />
 
       {/* Violet gradient overlay — brand primary base per §4.2 */}
