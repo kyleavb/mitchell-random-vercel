@@ -18,7 +18,7 @@ export default function Hero({
   formSrc,
 }: HeroData) {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-primary py-32 max-md:py-16">
+    <section className="relative min-h-[90vh] max-md:min-h-0 flex items-center overflow-hidden bg-primary py-32 max-md:py-16">
       {/* Background image — full color, focal-point positioned */}
       <Image
         src={heroImage}
