@@ -9,11 +9,12 @@ import { MenuIcon, CloseIcon } from "./icons";
 interface NavProps {
   logoText: string;
   logoSrc?: string;
+  logoHref?: string;
   ctaText: string;
   ctaHref: string;
 }
 
-export default function Nav({ logoText, logoSrc, ctaText, ctaHref }: NavProps) {
+export default function Nav({ logoText, logoSrc, logoHref = "#", ctaText, ctaHref }: NavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -22,7 +23,7 @@ export default function Nav({ logoText, logoSrc, ctaText, ctaHref }: NavProps) {
         <Container>
           <div className="flex items-center justify-between gap-8 py-4">
             <a
-              href="#"
+              href={logoHref}
               className="shrink-0 font-headline text-[1.75rem] font-bold text-on-primary no-underline tracking-tight"
             >
               {logoSrc ? (

@@ -11,10 +11,8 @@ export default function Footer() {
             <p className="font-headline text-xl font-bold text-on-primary">
               Mitchell College
             </p>
-            <p className="text-white/70 text-sm leading-relaxed">
-              A private, four-year liberal arts college dedicated to developing
-              the whole person through experiential learning, personal attention,
-              and a vibrant campus community on the Connecticut shoreline.
+            <p className="text-white/50 text-sm">
+              437 Pequot Ave, New London, CT 06320
             </p>
           </div>
         </div>

@@ -57,15 +57,6 @@ export default function Hero({
             <p className="text-on-primary-container text-lg max-w-[55ch]">
               {bodyText}
             </p>
-
-            <div className="mt-12 pl-6 border-l border-white/20">
-              <p className="text-white/40 text-sm font-body uppercase tracking-[0.2em] max-w-none">
-                Est. 1938
-              </p>
-              <p className="text-white/60 text-xs font-body max-w-none">
-                New London, Connecticut
-              </p>
-            </div>
           </div>
 
           <FormEmbed

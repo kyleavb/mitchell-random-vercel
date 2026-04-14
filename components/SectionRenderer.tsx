@@ -1,5 +1,6 @@
 import { SectionData } from "@/lib/types";
 import ExperienceSection from "./ExperienceSection";
+import ProgramsSection from "./ProgramsSection";
 import InfoCards from "./InfoCards";
 import CareerSection from "./CareerSection";
 import SecondaryCTA from "./SecondaryCTA";
@@ -16,6 +17,10 @@ export default function SectionRenderer({ sections }: SectionRendererProps) {
           case "experience": {
             const { type: _type, ...props } = section;
             return <ExperienceSection key={i} {...props} />;
+          }
+          case "programs": {
+            const { type: _type, ...props } = section;
+            return <ProgramsSection key={i} {...props} />;
           }
           case "infoCards": {
             const { type: _type, ...props } = section;

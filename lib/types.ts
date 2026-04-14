@@ -76,8 +76,19 @@ export interface SecondaryCtaSectionData {
   secondaryCta?: CtaLink;
 }
 
+export interface ProgramDetail {
+  title: string;
+  body: string;
+}
+
+export interface ProgramsSectionData {
+  type: "programs";
+  programs: ProgramDetail[];
+}
+
 export type SectionData =
   | ExperienceSectionData
+  | ProgramsSectionData
   | InfoCardsSectionData
   | CareerSectionData
   | SecondaryCtaSectionData;

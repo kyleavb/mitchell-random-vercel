@@ -30,10 +30,10 @@
   --color-outline: #79767D;
   --color-outline-variant: #CAC5CD;
 
-  /* Typography — Decalotype (display), Roundo (primary), Gentium Plus (secondary/body) */
+  /* Typography — Decalotype (display), Roundo (primary + body) */
   --font-display: var(--font-decalotype);
   --font-headline: var(--font-roundo);
-  --font-body: var(--font-gentium);
+  --font-body: var(--font-roundo);
 
   /* Shadows */
   --shadow-ambient: 0 4px 32px rgba(30, 27, 20, 0.04);
@@ -57,7 +57,7 @@
   }
 
   body {
-    font-family: var(--font-body), Georgia, serif;
+    font-family: var(--font-headline), sans-serif;
     color: var(--color-on-surface);
     background-color: var(--color-surface);
     line-height: 1.625;

@@ -37,6 +37,13 @@ export default function Button({
         </a>
       );
     }
+    if (href.startsWith("http")) {
+      return (
+        <a href={href} className={classes} target="_blank" rel="noopener noreferrer" onClick={onClick}>
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={classes}>
         {children}

@@ -18,7 +18,7 @@ export default function FormEmbed({ src, title, subheading }: FormEmbedProps) {
           {title}
         </h2>
         {subheading && (
-          <p className="text-on-surface-variant text-[0.9375rem] mb-8 max-w-none leading-relaxed">
+          <p className="text-on-surface-variant text-lg mb-8 max-w-none leading-relaxed">
             {subheading}
           </p>
         )}
