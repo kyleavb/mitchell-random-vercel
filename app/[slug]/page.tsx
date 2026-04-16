@@ -10,7 +10,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllSlugs();
+  const slugs = getAllSlugs().filter((slug) => slug !== "home");
   return slugs.map((slug) => ({ slug }));
 }
 
