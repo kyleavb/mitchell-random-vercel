@@ -1,10 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import Container from "./ui/Container";
 import Button from "./ui/Button";
 import { MenuIcon, CloseIcon } from "./icons";
+
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+const SITE_LINKS: NavLink[] = [
+  { label: "Programs", href: "/" },
+  { label: "Admissions", href: "/admissions" },
+  { label: "Tuition & Fees", href: "/tuition-and-fees" },
+  { label: "FAQs", href: "/faqs" },
+  { label: "Contact", href: "/contact" },
+];
 
 interface NavProps {
   logoText: string;
@@ -12,9 +26,10 @@ interface NavProps {
   logoHref?: string;
   ctaText: string;
   ctaHref: string;
+  minimal?: boolean;
 }
 
-export default function Nav({ logoText, logoSrc, logoHref = "#", ctaText, ctaHref }: NavProps) {
+export default function Nav({ logoText, logoSrc, logoHref = "/", ctaText, ctaHref, minimal }: NavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -33,17 +48,43 @@ export default function Nav({ logoText, logoSrc, logoHref = "#", ctaText, ctaHre
               )}
             </a>
 
+            {!minimal && (
+              <nav className="hidden lg:flex items-center gap-6" aria-label="Main">
+                {SITE_LINKS.map(({ label, href }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="text-sm font-headline font-bold text-on-primary/80 no-underline hover:text-on-primary transition-colors tracking-wide"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </nav>
+            )}
+
             <div className="hidden md:flex items-center">
               <Button href={ctaHref}>{ctaText}</Button>
             </div>
 
-            <button
-              className="flex md:hidden flex-col justify-center items-center w-10 h-10 bg-transparent border-none cursor-pointer text-on-primary p-2"
-              onClick={() => setMobileOpen(true)}
-              aria-label="Open menu"
-            >
-              <MenuIcon className="w-6 h-6" />
-            </button>
+            {!minimal && (
+              <button
+                className="flex lg:hidden flex-col justify-center items-center w-10 h-10 bg-transparent border-none cursor-pointer text-on-primary p-2"
+                onClick={() => setMobileOpen(true)}
+                aria-label="Open menu"
+              >
+                <MenuIcon className="w-6 h-6" />
+              </button>
+            )}
+
+            {minimal && (
+              <button
+                className="flex md:hidden flex-col justify-center items-center w-10 h-10 bg-transparent border-none cursor-pointer text-on-primary p-2"
+                onClick={() => setMobileOpen(true)}
+                aria-label="Open menu"
+              >
+                <MenuIcon className="w-6 h-6" />
+              </button>
+            )}
           </div>
         </Container>
       </header>
@@ -63,6 +104,17 @@ export default function Nav({ logoText, logoSrc, logoHref = "#", ctaText, ctaHre
         </button>
 
         <nav className="flex flex-col items-center gap-6">
+          {!minimal &&
+            SITE_LINKS.map(({ label, href }) => (
+              <Link
+                key={href}
+                href={href}
+                className="text-lg font-headline font-bold text-on-primary no-underline tracking-wide"
+                onClick={() => setMobileOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
           <Button href={ctaHref} onClick={() => setMobileOpen(false)}>
             {ctaText}
           </Button>

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Container from "./ui/Container";
 
 const PROGRAMS = [
-  { label: "Overview", href: "/programs" },
+  { label: "Overview", href: "/" },
   { label: "Business", href: "/programs/business" },
   { label: "Health and Human Services", href: "/programs/health-and-human-services" },
 ];

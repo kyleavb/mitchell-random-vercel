@@ -1,12 +1,19 @@
+import type { Metadata } from "next";
 import { getPageBySlug } from "@/lib/content";
 import Nav from "@/components/Nav";
-import ProgramsNav from "@/components/ProgramsNav";
 import Hero from "@/components/Hero";
 import SectionRenderer from "@/components/SectionRenderer";
 import Footer from "@/components/Footer";
 
-export default function ProgramsPage() {
-  const page = getPageBySlug("programs");
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
+export default function InfoPage() {
+  const page = getPageBySlug("home");
 
   return (
     <>
@@ -19,8 +26,8 @@ export default function ProgramsPage() {
         logoSrc="/images/Mitchell_Logo_Horizontal_White.png"
         ctaText="Request Info"
         ctaHref="#inquiry-form"
+        minimal
       />
-      <ProgramsNav />
 
       <main id="main-content">
         <Hero {...page} />

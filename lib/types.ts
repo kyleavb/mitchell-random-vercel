@@ -106,13 +106,38 @@ export interface FormSectionData {
   formSrc?: string;
 }
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface FaqSectionData {
+  type: "faq";
+  kicker?: string;
+  heading: string;
+  items: FaqItem[];
+}
+
+export interface ContactDetailsSectionData {
+  type: "contactDetails";
+  kicker?: string;
+  heading: string;
+  body?: string;
+  contacts: ContactInfo[];
+  formTitle?: string;
+  formSubheading?: string;
+  formSrc?: string;
+}
+
 export type SectionData =
   | ExperienceSectionData
   | ProgramsSectionData
   | InfoCardsSectionData
   | CareerSectionData
   | SecondaryCtaSectionData
-  | FormSectionData;
+  | FormSectionData
+  | FaqSectionData
+  | ContactDetailsSectionData;
 
 export interface PageData extends HeroData {
   slug: string;
