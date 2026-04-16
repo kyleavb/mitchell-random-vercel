@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { getPageBySlug } from "@/lib/content";
 import Nav from "@/components/Nav";
+import ProgramsNav from "@/components/ProgramsNav";
+import Breadcrumb from "@/components/Breadcrumb";
 import Hero from "@/components/Hero";
 import SectionRenderer from "@/components/SectionRenderer";
 import Footer from "@/components/Footer";
@@ -10,6 +12,11 @@ interface PageProps {
 }
 
 const PROGRAM_SLUGS = ["business", "health-and-human-services"];
+
+const PROGRAM_NAMES: Record<string, string> = {
+  business: "Business",
+  "health-and-human-services": "Health and Human Services",
+};
 
 export async function generateStaticParams() {
   return PROGRAM_SLUGS.map((slug) => ({ slug }));
@@ -40,6 +47,13 @@ export default async function ProgramPage({ params }: PageProps) {
         logoSrc="/images/Mitchell_Logo_Horizontal_White.png"
         ctaText="Request Info"
         ctaHref="#inquiry-form"
+      />
+      <ProgramsNav />
+      <Breadcrumb
+        items={[
+          { label: "Programs", href: "/programs" },
+          { label: PROGRAM_NAMES[slug] || slug },
+        ]}
       />
 
       <main id="main-content">
