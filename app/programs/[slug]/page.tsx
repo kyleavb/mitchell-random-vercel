@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPageBySlug, getAllSlugs } from "@/lib/content";
+import { getPageBySlug } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import SectionRenderer from "@/components/SectionRenderer";
@@ -9,15 +9,18 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-const EXCLUDED_SLUGS = ["home", "programs", "business", "health-and-human-services"];
+const PROGRAM_SLUGS = ["business", "health-and-human-services"];
 
 export async function generateStaticParams() {
-  const slugs = getAllSlugs().filter((slug) => !EXCLUDED_SLUGS.includes(slug));
-  return slugs.map((slug) => ({ slug }));
+  return PROGRAM_SLUGS.map((slug) => ({ slug }));
 }
 
-export default async function LandingPage({ params }: PageProps) {
+export default async function ProgramPage({ params }: PageProps) {
   const { slug } = await params;
+
+  if (!PROGRAM_SLUGS.includes(slug)) {
+    notFound();
+  }
 
   let page;
   try {

@@ -89,6 +89,7 @@ export interface SecondaryCtaSectionData {
 export interface ProgramDetail {
   title: string;
   body: string;
+  href?: string;
 }
 
 export interface ProgramsSectionData {
@@ -96,12 +97,22 @@ export interface ProgramsSectionData {
   programs: ProgramDetail[];
 }
 
+export interface FormSectionData {
+  type: "formSection";
+  heading: string;
+  body: string[];
+  formTitle: string;
+  formSubheading: string;
+  formSrc?: string;
+}
+
 export type SectionData =
   | ExperienceSectionData
   | ProgramsSectionData
   | InfoCardsSectionData
   | CareerSectionData
-  | SecondaryCtaSectionData;
+  | SecondaryCtaSectionData
+  | FormSectionData;
 
 export interface PageData extends HeroData {
   slug: string;

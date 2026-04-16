@@ -44,8 +44,30 @@ export default function Hero({
       />
 
       <Container className="relative z-[2] w-full">
-        <div className="grid grid-cols-[1.2fr_0.8fr] gap-16 items-center max-lg:grid-cols-1 max-lg:gap-12">
-          <div className="flex flex-col gap-6">
+        {formTitle ? (
+          <div className="grid grid-cols-[1.2fr_0.8fr] gap-16 items-center max-lg:grid-cols-1 max-lg:gap-12">
+            <div className="flex flex-col gap-6">
+              <Kicker className="text-white">{program}</Kicker>
+
+              <h1 className="text-on-primary">
+                {title}
+                {titleBreak && <br />} to{" "}
+                <em className="italic text-accent">{titleEmphasis}</em>
+              </h1>
+
+              <p className="text-on-primary-container text-lg max-w-[55ch]">
+                {bodyText}
+              </p>
+            </div>
+
+            <FormEmbed
+              src={formSrc || undefined}
+              title={formTitle}
+              subheading={formSubheading}
+            />
+          </div>
+        ) : (
+          <div className="flex flex-col gap-6 max-w-[700px]">
             <Kicker className="text-white">{program}</Kicker>
 
             <h1 className="text-on-primary">
@@ -58,13 +80,7 @@ export default function Hero({
               {bodyText}
             </p>
           </div>
-
-          <FormEmbed
-            src={formSrc || undefined}
-            title={formTitle}
-            subheading={formSubheading}
-          />
-        </div>
+        )}
       </Container>
     </section>
   );
