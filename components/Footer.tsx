@@ -12,6 +12,9 @@ export default function Footer() {
               Mitchell College
             </p>
             <p className="text-white/50 text-sm">
+              Established in 1938, Mitchell College is an accredited, private, four-year liberal arts college dedicated to developing the whole person through experiential learning, personal attention, and a vibrant campus community on the Connecticut shoreline.
+            </p>
+            <p className="text-white/50 text-sm">
               437 Pequot Ave, New London, CT 06320
             </p>
           </div>
