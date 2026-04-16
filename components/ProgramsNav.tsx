@@ -14,7 +14,7 @@ export default function ProgramsNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-primary border-t border-white/10" aria-label="Programs">
+    <nav className="sticky top-[72px] z-40 bg-primary border-t border-white/10" aria-label="Programs">
       <Container>
         <ul className="flex items-center gap-1 list-none m-0 p-0 overflow-x-auto">
           {PROGRAMS.map(({ label, href }) => {
