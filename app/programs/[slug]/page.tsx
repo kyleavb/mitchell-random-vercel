@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getPageBySlug } from "@/lib/content";
 import Nav from "@/components/Nav";
-import ProgramsNav from "@/components/ProgramsNav";
+
 import Breadcrumb from "@/components/Breadcrumb";
 import Hero from "@/components/Hero";
 import SectionRenderer from "@/components/SectionRenderer";
@@ -48,7 +48,6 @@ export default async function ProgramPage({ params }: PageProps) {
         ctaText="Request Info"
         ctaHref="#inquiry-form"
       />
-      <ProgramsNav />
       <Breadcrumb
         items={[
           { label: "Programs", href: "/" },

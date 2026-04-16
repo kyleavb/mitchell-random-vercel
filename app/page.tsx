@@ -1,6 +1,6 @@
 import { getPageBySlug } from "@/lib/content";
 import Nav from "@/components/Nav";
-import ProgramsNav from "@/components/ProgramsNav";
+
 import Hero from "@/components/Hero";
 import SectionRenderer from "@/components/SectionRenderer";
 import Footer from "@/components/Footer";
@@ -20,8 +20,6 @@ export default function HomePage() {
         ctaText="Request Info"
         ctaHref="#inquiry-form"
       />
-      <ProgramsNav />
-
       <main id="main-content">
         <Hero {...page} />
         <SectionRenderer sections={page.sections} />
