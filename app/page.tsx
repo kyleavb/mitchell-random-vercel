@@ -6,7 +6,7 @@ import SectionRenderer from "@/components/SectionRenderer";
 import Footer from "@/components/Footer";
 
 export default function HomePage() {
-  const page = getPageBySlug("programs");
+  const page = getPageBySlug("site-home");
 
   return (
     <>

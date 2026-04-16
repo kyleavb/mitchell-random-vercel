@@ -50,7 +50,8 @@ export default async function ProgramPage({ params }: PageProps) {
       />
       <Breadcrumb
         items={[
-          { label: "Programs", href: "/" },
+          { label: "Home", href: "/" },
+          { label: "Programs", href: "/programs" },
           { label: PROGRAM_NAMES[slug] || slug },
         ]}
       />

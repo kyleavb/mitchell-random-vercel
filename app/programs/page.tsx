@@ -1,38 +1,12 @@
-import { notFound } from "next/navigation";
-import { getPageBySlug, getAllSlugs } from "@/lib/content";
+import { getPageBySlug } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Breadcrumb from "@/components/Breadcrumb";
 import Hero from "@/components/Hero";
 import SectionRenderer from "@/components/SectionRenderer";
 import Footer from "@/components/Footer";
 
-interface PageProps {
-  params: Promise<{ slug: string }>;
-}
-
-const EXCLUDED_SLUGS = ["home", "site-home", "programs", "business", "health-and-human-services"];
-
-const PAGE_NAMES: Record<string, string> = {
-  admissions: "Admissions",
-  "tuition-and-fees": "Tuition & Fees",
-  faqs: "FAQs",
-  contact: "Contact",
-};
-
-export async function generateStaticParams() {
-  const slugs = getAllSlugs().filter((slug) => !EXCLUDED_SLUGS.includes(slug));
-  return slugs.map((slug) => ({ slug }));
-}
-
-export default async function LandingPage({ params }: PageProps) {
-  const { slug } = await params;
-
-  let page;
-  try {
-    page = getPageBySlug(slug);
-  } catch {
-    notFound();
-  }
+export default function ProgramsPage() {
+  const page = getPageBySlug("programs");
 
   return (
     <>
@@ -49,7 +23,7 @@ export default async function LandingPage({ params }: PageProps) {
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
-          { label: PAGE_NAMES[slug] || slug },
+          { label: "Programs" },
         ]}
       />
 

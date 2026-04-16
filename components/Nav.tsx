@@ -13,7 +13,7 @@ interface NavLink {
 }
 
 const SITE_LINKS: NavLink[] = [
-  { label: "Programs", href: "/" },
+  { label: "Programs", href: "/programs" },
   { label: "Admissions", href: "/admissions" },
   { label: "Tuition & Fees", href: "/tuition-and-fees" },
   { label: "FAQs", href: "/faqs" },
