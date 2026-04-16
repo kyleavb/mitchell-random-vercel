@@ -9,6 +9,7 @@ export default function SecondaryCTA({
   body,
   primaryCta,
   secondaryCta,
+  contact,
 }: Omit<SecondaryCtaSectionData, "type">) {
   return (
     <section className="bg-surface py-32 max-md:py-16 text-center">
@@ -37,6 +38,20 @@ export default function SecondaryCTA({
               </Button>
             )}
           </div>
+
+          {contact && (
+            <div className="mt-4 pt-6 border-t border-on-surface/10 flex flex-col items-center gap-1">
+              <p className="font-headline font-bold text-on-surface text-sm">
+                {contact.name}
+              </p>
+              <p className="text-on-surface-variant text-sm">{contact.title}</p>
+              <p className="text-on-surface-variant text-sm">
+                <a href={`tel:${contact.phone}`} className="text-secondary hover:underline">{contact.phone}</a>
+                {" | "}
+                <a href={`mailto:${contact.email}`} className="text-secondary hover:underline">{contact.email}</a>
+              </p>
+            </div>
+          )}
         </div>
       </Container>
     </section>

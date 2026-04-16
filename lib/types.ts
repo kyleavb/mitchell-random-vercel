@@ -24,6 +24,8 @@ export interface ExperienceSectionData {
   body: string[];
   sidebarTitle?: string;
   courses: string[];
+  sampleCoursesTitle?: string;
+  sampleCourses?: string[];
 }
 
 export interface InfoCardData {
@@ -67,6 +69,13 @@ export interface CtaLink {
   href: string;
 }
 
+export interface ContactInfo {
+  name: string;
+  title: string;
+  phone: string;
+  email: string;
+}
+
 export interface SecondaryCtaSectionData {
   type: "secondaryCta";
   kicker: string;
@@ -74,6 +83,7 @@ export interface SecondaryCtaSectionData {
   body: string;
   primaryCta: CtaLink;
   secondaryCta?: CtaLink;
+  contact?: ContactInfo;
 }
 
 export interface ProgramDetail {
