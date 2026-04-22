@@ -1,3 +1,8 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 interface FormEmbedProps {
   src?: string;
   title: string;
@@ -5,6 +10,37 @@ interface FormEmbedProps {
 }
 
 export default function FormEmbed({ src, title, subheading }: FormEmbedProps) {
+  const router = useRouter();
+
+  // Completion is signalled by a postMessage from the Pardot form's Thank You
+  // Content: `window.parent.postMessage({ type: 'pardot-submitted' }, '*')`.
+  // Sandbox blocks the iframe's own top-navigation, so the parent redirects.
+  useEffect(() => {
+    if (!src) return;
+
+    let pardotOrigin: string;
+    try {
+      pardotOrigin = new URL(src).origin;
+    } catch {
+      return;
+    }
+
+    function handleMessage(event: MessageEvent) {
+      if (event.origin !== pardotOrigin) return;
+      if (
+        typeof event.data !== "object" ||
+        event.data === null ||
+        (event.data as { type?: unknown }).type !== "pardot-submitted"
+      ) {
+        return;
+      }
+      router.push("/thank-you");
+    }
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, [src, router]);
+
   return (
     <div
       className="bg-silvergrass/70 backdrop-blur-xl rounded-xl shadow-elevated overflow-hidden border border-white/20"
@@ -31,7 +67,7 @@ export default function FormEmbed({ src, title, subheading }: FormEmbedProps) {
               className="w-full border-none"
               style={{ colorScheme: "light", height: "820px" }}
               loading="lazy"
-              sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-top-navigation-by-user-activation"
+              sandbox="allow-same-origin allow-forms allow-popups allow-scripts"
             />
           ) : (
             <div className="w-full min-h-[320px] border-2 border-dashed border-outline-variant rounded-md flex items-center justify-center text-on-surface-variant text-sm text-center p-8">
