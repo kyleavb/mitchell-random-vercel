@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import { SectionData } from "@/lib/types";
 import ExperienceSection from "./ExperienceSection";
 import ProgramsSection from "./ProgramsSection";
@@ -5,8 +6,9 @@ import InfoCards from "./InfoCards";
 import CareerSection from "./CareerSection";
 import SecondaryCTA from "./SecondaryCTA";
 import FormSection from "./FormSection";
-import FaqSection from "./FaqSection";
 import ContactDetailsSection from "./ContactDetailsSection";
+
+const FaqSection = dynamic(() => import("./FaqSection"));
 
 interface SectionRendererProps {
   sections: SectionData[];

@@ -9,7 +9,6 @@ const decalotype = localFont({
   src: [
     { path: "../public/fonts/decalotype/decalotype.regular.woff2", weight: "400", style: "normal" },
     { path: "../public/fonts/decalotype/decalotype.bold.woff2", weight: "700", style: "normal" },
-    { path: "../public/fonts/decalotype/decalotype.bold-italic.woff2", weight: "700", style: "italic" },
     { path: "../public/fonts/decalotype/decalotype.extrabold.woff2", weight: "800", style: "normal" },
     { path: "../public/fonts/decalotype/decalotype.extrabold-italic.woff2", weight: "800", style: "italic" },
   ],
@@ -25,17 +24,6 @@ const roundo = localFont({
     { path: "../public/fonts/roundo/roundo.bold.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-roundo",
-  display: "swap",
-});
-
-const gentiumPlus = localFont({
-  src: [
-    { path: "../public/fonts/gentium-plus/GentiumPlus-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../public/fonts/gentium-plus/GentiumPlus-Italic.woff2", weight: "400", style: "italic" },
-    { path: "../public/fonts/gentium-plus/GentiumPlus-Bold.woff2", weight: "700", style: "normal" },
-    { path: "../public/fonts/gentium-plus/GentiumPlus-BoldItalic.woff2", weight: "700", style: "italic" },
-  ],
-  variable: "--font-gentium",
   display: "swap",
 });
 
@@ -86,8 +74,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${decalotype.variable} ${roundo.variable} ${gentiumPlus.variable}`}
+      className={`${decalotype.variable} ${roundo.variable}`}
     >
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
+        <link rel="preconnect" href="https://go.info-education.com" crossOrigin="" />
+      </head>
       <Script id="gtm" strategy="afterInteractive">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
