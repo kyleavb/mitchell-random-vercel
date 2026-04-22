@@ -28,6 +28,17 @@ export default function ConsentBanner() {
     setVisible(false);
   }, []);
 
+  useEffect(() => {
+    if (!visible) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        handleAccept();
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [visible, handleAccept]);
+
   if (!visible) return null;
 
   return (
