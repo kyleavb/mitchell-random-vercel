@@ -5,6 +5,7 @@ type ButtonVariant = "primary" | "secondary";
 interface ButtonProps {
   variant?: ButtonVariant;
   href?: string;
+  fallbackHref?: string;
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
@@ -23,6 +24,7 @@ const baseClasses =
 export default function Button({
   variant = "primary",
   href,
+  fallbackHref,
   children,
   className = "",
   onClick,
@@ -31,8 +33,18 @@ export default function Button({
 
   if (href) {
     if (href.startsWith("#")) {
+      const handleHashClick =
+        fallbackHref || onClick
+          ? (e: React.MouseEvent<HTMLAnchorElement>) => {
+              if (fallbackHref && !document.getElementById(href.slice(1))) {
+                e.preventDefault();
+                window.location.href = fallbackHref;
+              }
+              onClick?.();
+            }
+          : undefined;
       return (
-        <a href={href} className={classes} onClick={onClick}>
+        <a href={href} className={classes} onClick={handleHashClick}>
           {children}
         </a>
       );

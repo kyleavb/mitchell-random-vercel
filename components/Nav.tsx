@@ -143,7 +143,9 @@ export default function Nav({ logoText, logoSrc, logoHref = "/", ctaText, ctaHre
             )}
 
             <div className="hidden md:flex items-center">
-              <Button href={ctaHref}>{ctaText}</Button>
+              <Button href={ctaHref} fallbackHref="/contact">
+                {ctaText}
+              </Button>
             </div>
 
             {!minimal && (
@@ -206,7 +208,7 @@ export default function Nav({ logoText, logoSrc, logoHref = "/", ctaText, ctaHre
                 ))}
               </div>
             ))}
-          <Button href={ctaHref} onClick={() => setMobileOpen(false)}>
+          <Button href={ctaHref} fallbackHref="/contact" onClick={() => setMobileOpen(false)}>
             {ctaText}
           </Button>
         </nav>
