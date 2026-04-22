@@ -34,7 +34,7 @@ export default function ConsentBanner() {
     <div
       role="region"
       aria-label="Cookie consent"
-      className="fixed bottom-0 inset-x-0 z-50 bg-primary text-white shadow-[0_-4px_16px_rgba(0,0,0,0.15)]"
+      className="fixed bottom-0 inset-x-0 z-50 bg-primary text-white shadow-[0_-4px_16px_rgba(0,0,0,0.15)] consent-banner-enter"
       style={{ fontFamily: "var(--font-body), sans-serif" }}
     >
       <div className="mx-auto max-w-6xl px-6 py-4 max-md:px-4 max-md:py-3 flex items-center gap-6 max-md:flex-col max-md:items-stretch max-md:gap-3">

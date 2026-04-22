@@ -123,3 +123,18 @@
     object-position: center -200px;
   }
 }
+
+@keyframes consent-slide-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.consent-banner-enter {
+  animation: consent-slide-up 260ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consent-banner-enter {
+    animation: none;
+  }
+}
