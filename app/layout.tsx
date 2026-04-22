@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
+import ConsentInit from "@/components/ConsentInit";
 import "./globals.css";
 
 const GTM_ID = "GTM-N7HLJZZ8";
@@ -103,6 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {children}
+        <ConsentInit />
       </body>
     </html>
   );
