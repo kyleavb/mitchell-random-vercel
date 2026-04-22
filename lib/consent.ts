@@ -43,12 +43,8 @@ export function writeConsent(choice: ConsentChoice): void {
 
 export function pushConsentUpdate(state: Partial<ConsentState>): void {
   if (typeof window === "undefined") return;
-  if (typeof window.gtag === "function") {
-    window.gtag("consent", "update", state);
-    return;
-  }
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(["consent", "update", state]);
+  if (typeof window.gtag !== "function") return;
+  window.gtag("consent", "update", state);
 }
 
 export const DENIED_UPDATE: Partial<ConsentState> = {
