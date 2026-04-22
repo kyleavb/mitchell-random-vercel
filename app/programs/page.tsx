@@ -10,7 +10,7 @@ export default function ProgramsPage() {
 
   return (
     <>
-      <a className="absolute -top-full left-4 z-[100] px-4 py-2 bg-secondary text-white font-semibold no-underline rounded-md focus:top-4" href="#main-content">
+      <a className="max-md:hidden absolute -top-full left-4 z-[100] px-4 py-2 bg-secondary text-white font-semibold no-underline rounded-md focus:top-4" href="#main-content">
         Skip to content
       </a>
 
