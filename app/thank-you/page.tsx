@@ -19,6 +19,7 @@ export default function ThankYouPage() {
         logoHref="https://mitchell.edu/"
         ctaText="Visit Mitchell College"
         ctaHref="https://mitchell.edu/"
+        minimal
       />
 
       <main className="bg-surface min-h-[70vh] flex items-center">
