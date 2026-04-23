@@ -7,6 +7,6 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!info|_next/|images/|fonts/|robots\\.txt|favicon\\.ico|pardot-form-styles\\.css).*)",
+    "/((?!info|thank-you|_next/|images/|fonts/|robots\\.txt|favicon\\.ico|pardot-form-styles\\.css).*)",
   ],
 };
